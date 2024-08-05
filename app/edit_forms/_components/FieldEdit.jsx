@@ -70,7 +70,7 @@ const FieldEdit = ({defaultValue, onUpdate, deleteField}) => {
     </AlertDialogHeader>
     <AlertDialogFooter>
       <AlertDialogCancel>Cancel</AlertDialogCancel>
-      <AlertDialogAction onClick={() => deleteField()}>Continue</AlertDialogAction>
+      <AlertDialogAction onClick={() => deleteField()} className='bg-primary'>Continue</AlertDialogAction>
     </AlertDialogFooter>
   </AlertDialogContent>
 </AlertDialog>
