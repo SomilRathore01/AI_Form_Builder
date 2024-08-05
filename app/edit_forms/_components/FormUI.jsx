@@ -84,7 +84,7 @@ const FormUI = ({ jsonForm, selectedTheme, selectedStyle, onFieldUpdate, deleteF
       <h2 className='font-bold text-center text-2xl'>{jsonForm?.formTitle}</h2>
       <h2 className='text-sm text-gray-400 text-center'>{jsonForm?.formSubHeading}</h2>
 
-      {jsonForm?.form?.map((field, index) => (
+      {jsonForm?.formFields?.map((field, index) => (
         <div key={index} className='flex items-center gap-2'>
           {field.fieldType == 'select' ?
             <div className='w-full my-3'>
