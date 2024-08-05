@@ -24,7 +24,7 @@ const Header = () => {
         <UserButton/>
         </div>:
         <SignInButton>
-          <Button> Get Started</Button>
+          <Button className='bg-primary'> Get Started</Button>
         </SignInButton>
         }
       </div>
