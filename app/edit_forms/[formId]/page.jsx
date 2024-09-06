@@ -30,7 +30,7 @@ const EditForm = ({ params }) => {
     }, [user])
 
     const GetFormData = async () => {
-        const result = await db.select().from(Jsonforms).where(and(eq(Jsonforms.id, params.formId), eq(Jsonforms.createdBy, user?.primaryEmailAddress?.emailAddress)));
+        const result = await db.select().from(Jsonforms).where(and(eq(Jsonforms.id, params.formId), eq(Jsonforms.createdBy, user?.username)));
         setRecord(result[0])
         console.log(JSON.parse(result[0].jsonform));
         setJsonForm(JSON.parse(result[0].jsonform))
@@ -57,7 +57,7 @@ const EditForm = ({ params }) => {
         const res = await db.update(Jsonforms)
             .set({
                 jsonform: jsonForm
-            }).where(and(eq(Jsonforms.id, record.id)), eq(Jsonforms.createdBy, user?.primaryEmailAddress?.emailAddress))
+            }).where(and(eq(Jsonforms.id, record.id)), eq(Jsonforms.createdBy, user?.username))
             .returning({ id: Jsonforms.id })
         toast.success("Form Updated Successfully")
         console.log(res);
@@ -74,7 +74,7 @@ const EditForm = ({ params }) => {
     const updateFields = async (value, columnName) => {
         const result = await db.update(Jsonforms).set({
             [columnName]: value
-        }).where(and(eq(Jsonforms.id, record.id)), eq(Jsonforms.createdBy, user?.primaryEmailAddress?.emailAddress))
+        }).where(and(eq(Jsonforms.id, record.id)), eq(Jsonforms.createdBy, user?.username))
             .returning({ id: Jsonforms.id })
         toast.success("Updated !!")
     }

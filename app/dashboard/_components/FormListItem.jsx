@@ -26,7 +26,7 @@ const FormListItem = ({ formRecord, JSONform, refreshData }) => {
     const { user } = useUser();
     const onDeleteForm = async () => {
         const result = await db.delete(Jsonforms)
-            .where(and(eq(Jsonforms.id, formRecord.id), eq(Jsonforms.createdBy, user?.primaryEmailAddress?.emailAddress)))
+            .where(and(eq(Jsonforms.id, formRecord.id), eq(Jsonforms.createdBy, user?.username)))
 
         if (result) {
             toast.success('Form Deleted Successfully');

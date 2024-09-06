@@ -6,7 +6,7 @@ export const Jsonforms = pgTable('jsonforms',{
     theme:varchar('theme'),
     background:varchar('background'),
     styles:text('styles'),
-    createdBy: varchar('createdBy').notNull(),
+    createdBy: varchar('createdBy'),
     createdDate: varchar('createdDate').notNull()
 })
 

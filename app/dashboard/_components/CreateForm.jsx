@@ -17,7 +17,7 @@ import { db } from '@/configs'
 import { useRouter } from 'next/navigation'
 import { Loader2 } from 'lucide-react'
 
-const PROMPT = "On the basis of description please give form in JSON format with formTitle, formSubHeading with form having formFields, formName, placeholderName, and formLabel, fieldType, fieldRequired in JSON format"
+const PROMPT = "On the basis of description please give form in JSON format with formTitle, formSubHeading with form having formFields, formName, placeholderName, and formLabel, fieldType(either text or select or checkbox or radio), fieldRequired in JSON format"
 
 const CreateForm = () => {
 
@@ -35,7 +35,7 @@ const CreateForm = () => {
         if(result.response.text()){
             const res = await db.insert(Jsonforms).values({
                 jsonform:result.response.text(),
-                createdBy: user?.primaryEmailAddress?.emailAddress,
+                createdBy: user?.username,
                 createdDate: moment().format('DD/MM/YYYY')
             }).returning ({id:Jsonforms.id});
             console.log("New Form Id",res[0].id);

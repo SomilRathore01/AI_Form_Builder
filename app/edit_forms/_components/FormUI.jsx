@@ -111,10 +111,6 @@ const FormUI = ({ jsonForm, selectedTheme, selectedStyle, onFieldUpdate, deleteF
                     <Label htmlFor={option}>{option}</Label>
                   </div>
                   ))}
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value="option-two" id="option-two" />
-                    <Label htmlFor="option-two">Option Two</Label>
-                  </div>
                 </RadioGroup>
               </div>
               : field.fieldType=='checkbox'?
@@ -123,7 +119,7 @@ const FormUI = ({ jsonForm, selectedTheme, selectedStyle, onFieldUpdate, deleteF
                 {field?.options?field?.options?.map((option, index) => (
                   <div className='flex gap-2 items-center'>
                     <Checkbox onCheckedChange={(v) => handleCheckboxChange(field?.formLabel, option, v)} />
-                    <h2>{option.label}</h2>
+                    <h2>{option}</h2>
                   </div>
                 )):
                 <div className='flex gap-2 items-center'>

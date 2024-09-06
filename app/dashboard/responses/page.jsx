@@ -17,7 +17,7 @@ const Responses = () => {
 
     const getFormList = async() => {
         const result = await db.select().from(Jsonforms)
-        .where(eq(Jsonforms.createdBy, user?.primaryEmailAddress?.emailAddress))
+        .where(eq(Jsonforms.createdBy, user?.username))
         
         console.log(result);
         setFormList(result);
