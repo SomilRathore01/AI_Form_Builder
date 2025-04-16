@@ -65,7 +65,7 @@ const FormListItem = ({ formRecord, JSONform, refreshData }) => {
                 <RWebShare
                     data={{
                         text: JSONform?.formSubHeading + "Build your own form in seconds",
-                        url: process.env.NEXT_PUBLIC_BASE_URL+"/aiform/"+formRecord?.id,
+                        url: process.env.NEXT_PUBLIC_BASE_URL+"aiform/"+formRecord?.id,
                         title: JSONform?.formTitle,
                     }}
                     onClick={() => console.log("shared successfully!")}

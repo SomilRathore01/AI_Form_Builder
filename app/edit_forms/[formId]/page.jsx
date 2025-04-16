@@ -93,7 +93,7 @@ const EditForm = ({ params }) => {
                     <RWebShare
                         data={{
                             text: jsonForm?.formSubHeading + "Build your own form in seconds",
-                            url: process.env.NEXT_PUBLIC_BASE_URL+"/aiform/"+record?.id,
+                            url: process.env.NEXT_PUBLIC_BASE_URL+"aiform/"+record?.id,
                             title: jsonForm?.formTitle,
                         }}
                         onClick={() => console.log("shared successfully!")}
